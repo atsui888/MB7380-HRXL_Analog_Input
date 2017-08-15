@@ -145,8 +145,8 @@ void loop() {
 
   // Pulse Width
   // ==============
-  //Sonar_PWInputinSeq();
-  Sonar_PWInputFreeRun();
+  Sonar_PWInputinSeq();
+  //Sonar_PWInputFreeRun();
   
   // Serial input  
   // ============
@@ -245,8 +245,8 @@ void Sonar_AnalogRead(byte analogPin) {
   */ 
 }
 
-void Sonar_PW_Read(byte analogPin) {
-  sonarDist = pulseIn(analogPin,HIGH);
+void Sonar_PW_Read(byte pwPin) {
+  sonarDist = pulseIn(pwPin,HIGH);
   // convert to CM
   sonarDist = sonarDist/10;
   Serial.print(sonarDist);
